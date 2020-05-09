@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --open --hot",
+    "start": "webpack-dev-server",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lint:fix": "yarn lint --fix"
   },
@@ -24,9 +24,13 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-loadable": "^5.5.3",
+    "@types/react-redux": "^7.1.8",
     "@types/react-router-dom": "^5.1.4",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
+    "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
@@ -36,6 +40,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5",
+    "style-loader": "^1.2.1",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
@@ -43,9 +48,13 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "antd": "^4.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",
-    "react-router-dom": "^5.1.2"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }

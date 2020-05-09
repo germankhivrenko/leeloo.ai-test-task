@@ -7,15 +7,21 @@ module.exports = {
   devServer: {
     port: 3000,
     historyApiFallback: true,
+    hot: true,
+    open: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      _components: path.resolve(__dirname, 'src/components/'),
+      components: path.resolve(__dirname, 'src/components/'),
     },
   },
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.(ts|tsx)$/,
         enforce: 'pre',

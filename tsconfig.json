@@ -9,7 +9,7 @@
     "allowJs": false,
     "moduleResolution": "Node",
     "paths": {
-      "_components/*": ["components/*"],
+      "components/*": ["components/*"],
     }
   }
 }

@@ -1,32 +1,30 @@
 import * as React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import * as Loadable from 'react-loadable';
-import PageLoading from '_components/PageLoading';
+import PageLoading from 'components/PageLoading';
 import EnhancedRoute from '../EnhancedRoute';
 
-const Auth = Loadable({
-  loader: () => import('_components/Auth'),
+const AccountList = Loadable({
+  loader: () => import('components/AccountList'),
   loading: PageLoading,
 });
 
-const Dashboard = Loadable({
-  loader: () => import('_components/Dashboard'),
+const AccountModal = Loadable({
+  loader: () => import('components/AccountModal'),
   loading: PageLoading,
 });
 
 const Routes: React.FC = () => (
-  <Switch>
-    <Route exact path="/">
-      <Redirect to="/dashboard" />
-    </Route>
-
-    <EnhancedRoute path="/auth" documentTitle="Auth" component={Auth} />
-    <EnhancedRoute
-      path="/dashboard"
-      documentTitle="Dashboard"
-      component={Dashboard}
-    />
-  </Switch>
+  <>
+    <Switch>
+      <EnhancedRoute
+        path="/"
+        documentTitle="Accounts"
+        component={AccountList}
+      />
+    </Switch>
+    <AccountModal />
+  </>
 );
 
 export default Routes;
